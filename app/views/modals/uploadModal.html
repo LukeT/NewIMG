@@ -1,0 +1,34 @@
+<div class="modal--background" ng-click="modal.close()"></div>
+
+<div class="modal profile uploader">
+	<form class="darken">
+
+		<div class="fileUploads" ng-show="modal.files.length">
+			<div class="fileUpload" ng-repeat="img in modal.files">
+				<div class="fileUpload-ico" ngf-background="img">
+
+				</div>
+
+				<div class="fileUpload-info">
+					<div class="fileUpload-name">
+						<input type="text" ng-model="img.metaName" required ng-maxlength="24">
+						<div class="frm-bar"></div>
+					</div>
+
+					<div class="fileUpload-size">
+						{{img.size | fileSize}} - {{img.percent || 0}}%
+					</div>
+				</div>
+
+				<div class="fileUpload-progress" ng-style="{ width: img.percent + '%'}">
+
+				</div>
+			</div>
+		</div>
+		<label class="upload" ng-hide="modal.lock" ng-class='{hasUploads: !!modal.files.length}' ngf-select="modal.updateFileNames($files)" ng-model="modal.files" ngf-multiple="true" ngf-keep="'distinct'" ngf-max-size="20MB" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'">
+			<i class="icon icon-camera"></i> <span ng-if="modal.files.length"> Add More </span> <span ng-if="!modal.files.length"> Upload Files </span>
+		</label>
+
+		<button ng-show="modal.files.length" ng-disabled='modal.lock' ng-click="modal.upload()"> <i class="icon icon-upload"></i> Upload </button>
+	</form>
+</div>

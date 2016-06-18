@@ -1,0 +1,6 @@
+node_modules
+config.json
+build_app
+app/scss/fonts/_fontTemplate.scss
+app/templates.js
+.uploads/

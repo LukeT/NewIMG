@@ -1,0 +1,92 @@
+html {
+	overflow-y:scroll;
+	overflow-x: hidden;
+}
+
+html, body {
+	padding:0;
+	margin:0;
+	background: #352a3c;
+}
+body, input, a {
+	font-family: 'Titillium Web', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/** Any elements using ng-show will
+    bug out before rendering, this hides them */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+header, .wrap {
+	-webkit-filter: blur(0px);
+}
+
+.wrap {
+	max-width: 1280px;
+	margin:0 auto;
+}
+
+.blur {
+	header, .wrap {
+		-webkit-filter: blur(10px);
+		transition: all ease-out 600ms;
+		animation-name: addBlur;
+		animation-duration: 600ms;
+		animation-iteration-count: 1;
+	}
+}
+
+.noBlur {
+	header, .wrap {
+		-webkit-filter: blur(0px);
+		transition: all ease-out 600ms;
+		animation-name: removeBlur !important;
+		animation-duration: 600ms;
+		animation-iteration-count: 1;
+	}
+}
+
+@keyframes addBlur {
+	0% {
+		-webkit-filter: blur(0px);
+	}
+
+	100% {
+		-webkit-filter: blur(10px);
+	}
+}
+
+
+
+@keyframes removeBlur {
+	0% {
+		-webkit-filter: blur(10px);
+	}
+
+	100% {
+		-webkit-filter: blur(0px);
+	}
+}
+
+.wrap,.dashboard {
+	@include clearfix();
+}
+
+.licence {
+	width: 100%;
+	@include clearfix();
+	text-align: center;
+	color: #FFF;
+	opacity: 0.5;
+	border-top:1px solid #573f68;
+	line-height: 55px;
+	background: #4f395e;
+	a {
+		color: #FFF;
+	}
+}

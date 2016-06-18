@@ -1,0 +1,151 @@
+.auth {
+	&--background {
+		position: fixed;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		background-image: url(/app/images/bg.png);
+		background-size:cover;
+	}
+
+	.licence {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: center;
+		line-height: 50px;
+		color: #FFF;
+		opacity: 0.5;
+
+		a {
+			color: #FFF;
+		}
+	}
+	
+	&--container {
+		min-height: 390px;
+		height: auto;
+		width:350px;
+		position: fixed;
+		top:50%;
+		left:50%;
+		overflow:hidden;
+		margin-top:-230px;
+		margin-left:-175px;
+		background: rgba(0, 0, 0, 0.19);
+
+		[ui-view] {
+			padding-left:30px;
+			padding-right: 30px;
+
+			&.ng-enter, &.ng-leave {
+
+				position: absolute;
+				width: 350px;
+				height: 350px !important;
+				transition: all ease 500ms;
+			}
+
+			&.ng-enter.ng-enter-active {
+				right:0;
+			}
+
+			&.ng-enter {
+				right:-100%;
+			}
+
+			&.ng-leave.ng-leave-active {
+				left:-100%;
+			}
+
+			&.ng-leave {
+				left:0;
+			}
+		}
+
+		@keyframes error {
+			from {
+				height: 0;
+				opacity: 0;
+			}
+
+			to {
+				height: 40px;
+				opacity: 1;
+			}
+		}
+
+		.error {
+			background: rgb(158, 0, 0);
+			margin-left: -30px;
+			margin-right: -30px;
+			height: 40px;
+			line-height: 40px;
+			color: #FFF;
+			padding-left: 15px;
+			font-size: 14px;
+			font-weight: 600;
+
+			transition: all ease-in-out;
+			animation: error 500ms ease-in-out;
+		}
+
+		form.noError {
+			margin-top:20px;
+			&[name=login] {
+				margin-top:60px;
+			}
+		}
+
+		form.hasError {
+			margin-top:40px;
+		}
+
+		.auth--links {
+			padding-left:30px;
+			a {
+				display:inline-block;
+				position: relative;
+				color:#FFF;
+				text-decoration: none;
+				font-size:20px;
+				font-weight: 700;
+				letter-spacing: 1.1px;
+				padding-left:2px;
+				padding-right:2px;
+				padding-top:15px;
+				padding-bottom: 10px;
+				margin: 15px 10px;
+				margin-left:0;
+				opacity: 0.7;
+				text-transform: uppercase;
+
+				&:before {
+					content: "";
+					position: absolute;
+					width:0%;
+					height: 2px;
+					bottom:0;
+					left:0;
+					background: #FFF;
+				    transition: width 0.3s;
+				}
+
+				&:hover:before {
+					visibility: visible;
+					width:100%;
+				}
+
+				&.active {
+					opacity: 1;
+					&:before {
+						width:100%;
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+}

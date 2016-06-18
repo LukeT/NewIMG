@@ -1,0 +1,19 @@
+<div class="modal--background" ng-click="modal.close()"></div>
+
+<div class="modal profile">
+	<form class="darken">
+		<div>
+			<input type="text" ng-model="modal.folder.folderName" placeholder="Folder Name" />
+			<div class="frm-bar"></div>
+		</div>
+
+		<div class="colours">
+			<div class="colour" ng-repeat="colour in ['purple', 'red', 'orange', 'blue', 'green', 'pink']" ng-class="'colour-' + colour" ng-click="modal.setColour(colour)">
+				<i class="icon icon-check" ng-class="{active: modal.folder.colour === colour}"></i>
+			</div>
+		</div>
+
+		<input type="submit" ng-if="modal.folder.id" value="Save" ng-click="modal.save()"/>
+		<input type="submit" ng-if="!modal.folder.id" value="Add" ng-click="modal.create()"/>
+	</form>
+</div>

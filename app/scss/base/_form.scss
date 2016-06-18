@@ -1,0 +1,111 @@
+form {
+
+	&.darken {
+		.frm-bar {
+			background: #4f395e;
+		}
+
+		input {
+			&[type=text], &[type=password], &[type=email] {
+				color: #4f395e;
+				border-bottom: 2px solid rgba(#4f395e, 0.2);
+
+				&::-webkit-input-placeholder  {
+					color: #a7a7a7;
+				}
+			}
+		}
+	}
+
+	.frm-bar {
+		position: absolute;
+		width:0;
+		bottom:0;
+		height:2px;
+		background: rgba(250, 243, 255, 0.43);
+		transition: width 300ms ease-in-out;
+	}
+
+	> div {
+		position: relative;
+	}
+
+	input {
+		&[type=text], &[type=password], &[type=email] {
+			display: block;
+		    background: transparent;
+		    border: 0;
+		    width: 100%;
+		    font-size: 16px;
+		    padding: 10px 10px;
+		    line-height: 30px;
+		    font-weight: 600;
+			letter-spacing: 0.5px;
+		    margin-top: 12.5px;
+		    margin-bottom: 12.5px;
+
+			color: #FFF;
+		    border-bottom: 2px solid rgba(214, 173, 239, 0.13);
+
+			&:focus {
+				outline: none;
+			}
+
+			&:focus ~ .frm-bar {
+				width:100%;
+			}
+
+			&::-webkit-input-placeholder  {
+				color: rgba(250, 243, 255, 0.43)
+			}
+
+			&.ng-dirty.ng-invalid {
+			    border-bottom: 2px solid rgba(197, 7, 7, 0.4);
+			    color: #9f7070;
+
+				& ~ .frm-bar {
+					background: rgba(197, 7, 7, 1);
+				}
+			}
+		}
+
+		&[type=submit] {
+			display: inline-block;
+			padding:5px;
+			float: right;
+			margin-top:15px;
+			border:0;
+			color: rgba(#FFF, 0.9);
+			font-weight: 700;
+			font-size:16px;
+			padding:5px 15px;
+			background: #4f395e;
+			@include user-select(none);
+
+			&:focus, &:hover {
+				background: lighten(#4f395e, 10%);
+				outline: none;
+			}
+
+			&[disabled] {
+				background: rgba(197, 7, 7, 0.3);
+			}
+		}
+	}
+
+	.split {
+		> div {
+			position: relative;
+			width:45%;
+			float: left;
+
+			.frm-bar {
+				bottom:12px;
+			}
+
+			&:nth-child(2) {
+				margin-left:10%;
+			}
+		}
+	}
+}

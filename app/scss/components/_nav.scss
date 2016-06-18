@@ -1,0 +1,67 @@
+nav {
+	.items {
+		margin-bottom: 50px;
+
+		width:calc(100% - 60px);
+		height: 52px;
+		display: block;
+		float: left;
+		margin-top:30px;
+		border-bottom: 2px solid rgba(87, 63, 104, 0.27);
+
+		.item {
+			font-size:18px;
+			font-weight: 600;
+			color:rgba(#FFF, 0.5);
+			float:left;
+			padding: 15px 20px;
+			@include user-select(none);
+
+			span {
+				margin-left:5px;
+			}
+
+			i.icon-camera {
+				margin-right:3px;
+			}
+
+			&.active {
+				color:#FFF;
+				border-bottom: 2px solid #FFF !important;
+			}
+
+			&:hover {
+				color:#FFF;
+
+				border-bottom: 2px solid rgba(#FFF, 0.3);
+				background: #41324a;
+			}
+		}
+
+		.item-right {
+			float: right;
+			margin-right:30px;
+		}
+	}
+
+	button {
+		float: right;
+		margin-top:55px;
+		width:50px;
+		height: 50px;
+		border-radius: 50%;
+		border: 0;
+		color:#FFF;
+		font-size:16px;
+		background: #4f395e;
+		@include user-select(none);
+		
+		&:hover {
+			background: lighten(#4f395e, 10%);
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}

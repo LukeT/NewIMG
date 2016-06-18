@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="newimg" ng-controller="NewImgCtrl as NIMGCtrl">
+	<head>
+		<base href="/app/" />
+		<meta charset="UTF-8">
+		<meta content='width=device-width, initial-scale=1' name='viewport'/>
+		<link rel="stylesheet" href="css/app.css" />
+		<title ng-bind="pageTitle"></title>
+		<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700,800' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body ng-class="{blur: $root.modal, noBlur: $root.modalBlur}">
+		<ui-view></ui-view>
+
+		<script src="js/app.js"></script>
+	</body>
+</html>

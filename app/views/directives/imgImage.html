@@ -1,0 +1,22 @@
+<div class="card" ng-class="{'card-small': vm.origin === 'folder'}">
+	<div class="menu" ng-class="{active: vm.menu}">
+		<ul>
+			<li><a ng-click="vm.copyURL()"><i class="icon icon-link"></i> Copy URL </a></li>
+			<li><a ng-if="vm.origin !== 'folder'" ng-click="vm.moveFolder()"><i class="icon icon-folder-add"></i> Move to Folder </a></li>
+			<li><a ng-if="vm.origin === 'folder'" ng-click="vm.removeFromFolder()"><i class="icon icon-folder-remove"></i> Remove from Folder </a></li>
+			<li><a ng-click="vm.delete()"><i class="icon icon-trash"></i> Delete Image </a></li>
+		</ul>
+	</div>
+	<div class="card-info">
+		<div class="card-title input">
+			<input type="text" ng-model="vm.image.title" ng-model-options="{ debounce: 1000 }" ng-change="vm.changeTitle()" required ng-minlength="2" ng-maxlength="24"/>
+		</div>
+		<div class="card-ago" am-time-ago="vm.image.createdAt">
+		</div>
+	</div>
+	<div class="card-right">
+		<button ng-click="vm.toggleMenu()"><i class="icon icon-menu"></i></button>
+	</div>
+	<img ng-if="!vm.image.imported" img-smart-img ng-src="{{vm.image.imageUrl}}?type=thumb" />
+	<img ng-if="vm.image.imported" ng-src="{{vm.image.imageUrl}}?type=thumb" />
+</div>

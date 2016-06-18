@@ -1,0 +1,23 @@
+<div class="card card-folder" ng-class="vm.getClass()">
+	<div class="card-background">
+		<img ng-repeat="img in vm.folder.images" ng-src="{{img}}" />
+	</div>
+
+	<div class="menu" ng-class="{active: vm.menu}">
+		<ul>
+			<li><a ng-click="vm.settings()"><i class="icon icon-pencil-edit"></i> Settings </a></li>
+			<li><a ng-click="vm.delete()"><i class="icon icon-trash"></i> Delete Folder</a></li>
+		</ul>
+	</div>
+
+	<div class="card-right">
+		<button ng-click="vm.toggleMenu()"><i class="icon icon-menu"></i></button>
+	</div>
+
+	<div class="folder-name">
+		<i class="icon icon-folder"></i>
+		<span>{{vm.folder.folderName}} {{vm.activeFolder}}</span>
+	</div>
+
+	<img style="opacity:0;" ng-click="vm.makeActive()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAD6AQMAAAAho+iwAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACBJREFUaN7twQENAAAAwiD7p7bHBwwAAAAAAAAAAICQAyYWAAF9F5dOAAAAAElFTkSuQmCC"/>
+</div>

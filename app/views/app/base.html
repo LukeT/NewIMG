@@ -1,0 +1,36 @@
+<header>
+	<div class="logo">
+		<div>
+			<i class="icon icon-camera-alt"></i> <span>NewIMG</span>
+		</div>
+	</div>
+
+	<div class="account" ui-sref="logout">
+		<img ng-src="{{NIMGCtrl.currentUser.getAvatar()}}" alt="Luke" />
+		<span>{{NIMGCtrl.currentUser.get().username}}</span>
+	</div>
+</header>
+
+<div class="wrap">
+	<nav>
+		<div class="items">
+			<div class="item" ui-sref="app.uploads" ui-sref-active="active"> <i class="icon icon-camera"></i><span>Uploads</span></div>
+			<div class="item active" ui-sref="app.folders" ui-sref-active="active"> <i class="icon icon-folder"></i> <span>Folders</span> </div>
+
+			<div class="item item-right" ng-click="vm.showAccountModal()">
+				 <i class="icon icon-user"></i> Account
+			</div>
+		</div>
+
+		<button class="uploadImage" ng-show="vm.activeMenu === 'app.uploads'" ng-click="vm.uploadImage()"><i class="icon icon-upload"></i></button>
+		<button class="uploadImage" ng-show="vm.activeMenu === 'app.folders'" ng-click="vm.addFolder()"><i class="icon icon-folder-add"></i></button>
+	</nav>
+</div>
+
+<div class="dashboard">
+	<div ui-view="app:dashboard"></div>
+</div>
+
+<div class="licence">
+	Built by <a href="https://luket.io">Luke Thompson</a>, Contribute to the project on <a href="https://github.com/LukeT/NewIMG">GitHub</a>
+</div>

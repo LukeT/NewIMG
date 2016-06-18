@@ -1,0 +1,65 @@
+.profile {
+	&-logo {
+		text-align: center;
+		background: #4f395e;
+		height: 20px;
+		position: relative;
+
+		.logo-con {
+			position: relative;
+			display: inline-block;
+			margin-top:-65px;
+			border-radius: 50%;
+			width:150px;
+			height: 150px;
+			overflow: hidden;
+
+			&:hover {
+				.hover {
+					opacity: 1;
+				}
+			}
+
+			.hover {
+				transition: opacity ease-out 100ms;
+				border-radius: 50%;
+				opacity: 0;
+				position: absolute;
+				top:0;
+				left:0;
+				bottom: 0;
+				right: 0;
+				background: rgba(#FFF, 0.2);
+
+				i {
+					padding:10px 13px;
+					border-radius: 50%;
+					line-height: 140px;
+					color:#FFF;
+					background: #4f395e;
+
+					@include user-select(none);
+
+					&:hover {
+						background: lighten(#4f395e, 10%);
+					}
+				}
+			}
+			img {
+				width:100%;
+				height: 100%;
+			}
+		}
+	}
+
+	form {
+		margin-top:70px;
+		margin-left:30px;
+		margin-right:40px;
+
+		input[type=submit] {
+			margin-top:25px;
+			margin-bottom:20px;
+		}
+	}
+}

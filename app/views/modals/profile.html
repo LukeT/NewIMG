@@ -1,0 +1,42 @@
+<div class="modal--background" ng-click="modal.close()"></div>
+
+<div class="modal profile">
+	<div class="profile-logo">
+		<div class="logo-con">
+			<!-- <div class="hover">
+				<i class="icon icon-pencil-edit"></i>
+			</div> -->
+
+			<img ng-src="{{modal.account.avatar}}?s=512">
+		</div>
+	</div>
+
+	<form class="darken" name="passwordForm" novalidate>
+		<div class="error" ng-show="modal.error">
+			{{modal.error}}
+		</div>
+
+		<div>
+			<input type="text" ng-model="modal.account.username" placeholder="Username" readonly />
+			<div class="frm-bar"></div>
+		</div>
+
+		<div>
+			<input type="email" ng-model="modal.account.email" placeholder="Email" readonly/>
+			<div class="frm-bar"></div>
+		</div>
+
+		<div class="split">
+			<div>
+				<input type="password" ng-model="modal.oldPassword" placeholder="Old Password"/>
+				<div class="frm-bar"></div>
+			</div>
+			<div>
+				<input type="password" ng-model="modal.newPassword" ng-minlength="6" placeholder="New Password"/>
+				<div class="frm-bar"></div>
+			</div>
+		</div>
+
+		<input type="submit" value = "Update" ng-click="modal.changePassword()" />
+	</form>
+</div>

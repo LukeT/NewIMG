@@ -1,0 +1,27 @@
+.dashboard {
+
+	[ui-view] {
+		&.ng-enter, &.ng-leave {
+			margin-top:132px;
+			position: absolute;
+			width: 100vw;
+			transition: all ease 500ms;
+		}
+
+		&.ng-enter.ng-enter-active {
+			right:0;
+		}
+
+		&.ng-enter {
+			right:-100%;
+		}
+
+		&.ng-leave.ng-leave-active {
+			left:-100%;
+		}
+
+		&.ng-leave {
+			left:-10px;
+		}
+	}
+}

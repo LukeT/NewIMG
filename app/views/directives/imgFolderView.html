@@ -1,0 +1,4 @@
+<div class="imgRow" ng-hide="vm.images === false">
+	<p ng-if="!vm.images.length"> No Images! </p>
+	<img-image ng-repeat="i in vm.images" images="vm.images" origin="'folder'" image="i"></img-image>
+</div>

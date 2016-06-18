@@ -1,0 +1,72 @@
+header {
+	width:100%;
+	height: 70px;
+	background: #4f395e;
+	box-shadow: 0px 1px 11px -2px rgba(0,0,0,0.75);
+
+	.logo {
+		width:300px;
+		text-align: center;
+		font-size:25px;
+		line-height: 70px;
+		float: left;
+		color:#FFF;
+		height: 70px;
+		border-right: 1px solid #694283;
+		background: #573f68;
+
+		div {
+			display: inline-block;
+			height: 70px;
+			text-align: center;
+		}
+
+		i {
+			display: inline-block;
+			font-size:40px;
+			float: left;
+			padding-left:30px;
+		}
+
+		span {
+			display: inline-block;
+			line-height: 70px;
+			float: left;
+			padding-left:15px;
+			padding-right: 30px;
+		}
+	}
+
+	.account {
+		height: 70px;
+		float: right;
+		padding-left:15px;
+		padding-right: 30px;
+		color:#FFF;
+
+		&:hover {
+			@include user-select(none);
+			background: #573f68;
+		}
+
+		img {
+			height: 40px;
+			width:40px;
+			background-position: center center;
+			border-radius: 50%;
+			margin-top:15px;
+			display: inline-block;
+			float: left;
+		}
+
+		span {
+			margin-left:15px;
+			height: 70px;
+			line-height: 70px;
+			font-size:16px;
+			font-weight: 500;
+			display: inline-block;
+			float: left;
+		}
+	}
+}

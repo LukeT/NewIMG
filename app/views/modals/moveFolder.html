@@ -1,0 +1,21 @@
+<div class="modal--background" ng-click="modal.close()"></div>
+
+<div class="modal profile">
+	<form class="darken" style="margin-top:40px;">
+		<div class="currentFolder" ng-show="modal.image.folder.id">
+			Currently In: <span>{{modal.image.folder.folderName}}</span> <span class="col" ng-class="'colour-' + modal.image.folder.colour"></span>
+		</div>
+
+		<div class="folders">
+			<div class="folder" ng-repeat="folder in modal.folders" ng-class="{active: modal.activeFolder(folder.id)}" ng-click="modal.makeActive(folder)">
+				<div class="folderName">
+					<i class="icon icon-folder"></i> <span> {{folder.folderName}}</span>
+				</div>
+
+				<div class="col" ng-class="'colour-' + folder.colour">
+				</div>
+			</div>
+		</div>
+		<input type="submit" value="Move to folder" ng-click="modal.save()"/>
+	</form>
+</div>

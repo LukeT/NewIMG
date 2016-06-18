@@ -1,0 +1,22 @@
+<div class="error" ng-show="vm.signupError">
+	{{vm.signupError}}
+</div>
+
+<form name="signUp" ng-class="{noError: !vm.signupError}">
+	<div>
+		<input type="text" ng-model="vm.signupForm.username" placeholder="Username" required ng-minlength="3" ng-maxlength="24" />
+		<div class="frm-bar"></div>
+	</div>
+
+	<div>
+		<input type="password" ng-model="vm.signupForm.password" placeholder="Password" required ng-minlength="6"/>
+		<div class="frm-bar"></div>
+	</div>
+
+	<div>
+		<input type="email" ng-model="vm.signupForm.email" placeholder="example@example.org" required/>
+		<div class="frm-bar"></div>
+	</div>
+
+	<input type="submit" value="Sign Up" ng-disabled="signUp.$invalid" ng-click="vm.signup()" />
+</form>
