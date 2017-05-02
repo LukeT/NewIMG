@@ -12,7 +12,7 @@
 	</div>
 
 	<form class="darken" name="passwordForm" novalidate>
-		<div class="error" ng-show="modal.error">
+		<div class="error" ng-if="modal.error">
 			{{modal.error}}
 		</div>
 
@@ -37,6 +37,6 @@
 			</div>
 		</div>
 
-		<input type="submit" value = "Update" ng-click="modal.changePassword()" />
+		<input type="submit" value = "Update" ng-click="modal.changePassword(newPassword)" />
 	</form>
 </div>

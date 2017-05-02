@@ -47,7 +47,7 @@ export default class NewImgCtrl {
 
 	/**
 	 * Try and fetch the data from the core endpoint
-	 * which has neciserry information for operation, loop
+	 * which has necessary information for operation, loop
 	 * until we have that data.
 	 *
 	 * @method _go

@@ -15,8 +15,8 @@ export default class AccountModalCtrl {
 		this.account.avatar = currentUser.getAvatar();
 	}
 
-	changePassword() {
-		if (this.newPassword && this.oldPassword && this.passwordForm.$valid) {
+	changePassword(form) {
+		if (this.newPassword && this.oldPassword && form.$valid) {
 			return this._users.changePassword(this.account.username, {
 				oldPassword: this.oldPassword,
 				newPassword: this.newPassword,
@@ -34,6 +34,7 @@ export default class AccountModalCtrl {
 
 		return null;
 	}
+
 	close() {
 		this._rootScope.modalBlur = true;
 		this._element.addClass('modal--hide');

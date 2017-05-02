@@ -1,4 +1,5 @@
 .dashboard {
+	min-height: calc(100vh - 259px);
 
 	[ui-view] {
 		&.ng-enter, &.ng-leave {
@@ -6,6 +7,8 @@
 			position: absolute;
 			width: 100vw;
 			transition: all ease 500ms;
+			position: absolute;
+			top: 70px;
 		}
 
 		&.ng-enter.ng-enter-active {
